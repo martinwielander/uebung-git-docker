@@ -27,7 +27,7 @@ def erhoehe_zaehler(datei: Path) -> int:
 
 
 def begruessung(anzahl: int) -> str:
-    return f"Servus! Du bist Besucher Nr. {anzahl}."
+    return f"ServusA! Du bist Besucher Nr. {anzahl}."
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -36,7 +36,7 @@ class Handler(BaseHTTPRequestHandler):
             self.send_error(404)
             return
         text = begruessung(erhoehe_zaehler(ZAEHLER_DATEI))
-        body = f"<html><body><h1>{text}</h1></body></html>".encode("utf-8")
+        body = f"<html><body><h1 style='color: green'>{text}</h1></body></html>".encode("utf-8")
         self.send_response(200)
         self.send_header("Content-Type", "text/html; charset=utf-8")
         self.send_header("Content-Length", str(len(body)))
