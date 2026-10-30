@@ -27,7 +27,7 @@ def erhoehe_zaehler(datei: Path) -> int:
 
 
 def begruessung(anzahl: int) -> str:
-    return f"Hallo! Du bist Besucher Nr. {anzahl}."
+    return f"Servus! Du bist Besucher Nr. {anzahl}."
 
 
 class Handler(BaseHTTPRequestHandler):
